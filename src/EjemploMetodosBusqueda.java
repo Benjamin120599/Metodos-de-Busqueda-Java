@@ -60,7 +60,7 @@ public class EjemploMetodosBusqueda {
 	public static void main(String[] args) {
 		
 		MetodosDeBusqueda mb = new MetodosDeBusqueda();
-		int[] arreglo1 = mb.vector1000();
+		int[] arreglo1 = mb.vector100();
 		
 		mb.mostrarVector(arreglo1);
 		
