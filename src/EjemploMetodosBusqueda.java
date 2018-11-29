@@ -25,8 +25,8 @@ class MetodosDeBusqueda {
 		
 	}
 	
-	public int[] vector1000() {
-		int[] vector = new int[500];
+	public int[] vector100() {
+		int[] vector = new int[100];
 		int numeroAleatorio = 0;
 		for(int i=0; i<vector.length; i++) {
 			numeroAleatorio = (int)(Math.random() * 1000) + 1;
