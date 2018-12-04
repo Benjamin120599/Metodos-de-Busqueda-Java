@@ -1,6 +1,25 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
+class hashCero {
+	
+	
+	
+}
+
 class MetodosDeBusqueda {
+	
+	String[] arreglo;
+	int tamaño, contador; 
+	
+	public MetodosDeBusqueda() {
+	}
+	
+	public MetodosDeBusqueda(int tam) {
+		tamaño = tam;
+		arreglo = new String[tam];
+		Arrays.fill(arreglo, "-1");
+	}
 	
 	public void busquedaSecuencial(int[] numeros) {
 		
@@ -46,6 +65,26 @@ class MetodosDeBusqueda {
 		}
 		
 		return -1;
+	}
+	
+	public void funcionHash(String[] cadenaArreglo, String[] arreglo) {
+		
+		int i;
+		
+		for(i=0; i < cadenaArreglo.length; i++) {
+			String elemento = cadenaArreglo[i];
+			int indiceArreglo = Integer.parseInt(elemento)%7;
+			System.out.println("El indice es: "+indiceArreglo+" para el elemento "+elemento);
+			
+			while(arreglo[indiceArreglo] != "-1") {
+				indiceArreglo++;
+				System.out.println("Ocurrio una colision para el indice "+(indiceArreglo-1)+" cambiar al indice "+indiceArreglo);
+				indiceArreglo %= tamaño;
+			}
+			arreglo[indiceArreglo] = elemento;
+		}
+		
+		
 	}
 	
 	public int[] vector100() {
