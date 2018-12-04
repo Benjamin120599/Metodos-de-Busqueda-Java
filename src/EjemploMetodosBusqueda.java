@@ -87,6 +87,27 @@ class MetodosDeBusqueda {
 		
 	}
 	
+	public String buscarClave(String elemento) {
+		
+		int indiceArreglo = Integer.parseInt(elemento)%7;
+		int contador = 0;
+		
+		while(arreglo[indiceArreglo] != "-1") {
+			if(arreglo[indiceArreglo] == elemento) {
+				System.out.println("El elemento "+elemento+" fue encontrado en la posición "+indiceArreglo);
+				return arreglo[indiceArreglo];
+			}
+			indiceArreglo++;
+			indiceArreglo %= tamaño;
+			contador++;
+			
+			if(contador > 7) {
+				break;
+			}
+		}
+		return null;
+	}
+	
 	public int[] vector100() {
 		int[] vector = new int[100];
 		int numeroAleatorio = 0;
